@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Browser Radar</title>
+    <meta name="description" content="Browser radar demo">
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="p-4 pt-1 md:p-20 max-w-[700px]">
+    <h1 class="text-3xl text-center sm:text-left mb-8 bg-gray-100 p-2 text-gray-700">Browser Radar Demo</h1>
+    <div class=" pt-4">
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                browserRadar.init();
+            });
+        </script>
+        <p class="py-4 text-lg tracking-wide">Your browser details:</p>
+        <div class="grid grid-cols-2 gap-y-2 gap-x-1 mb-3 pb-2 border-b border-gray-300">
+            <strong>Operating System</strong>
+            <div>
+                <span data-br-key="os.name"></span> - <span data-br-key="os.version"></span>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-y-2 mb-3 pb-2 border-b border-gray-300">
+            <strong>Browser</strong>
+            <div>
+                <span data-br-key="browser.name"></span> - <span data-br-key="browser.version"></span>
+            </div>
+        </div>
+        <div class="py-6">
+            <div>Full User Agent: </div>
+            <div class="text-gray-400 text-xs" data-br-key="ua"></div>
+        </div>
+        <p>Copy the link below to share with your support team.</p>
+        <div class="flex flex-wrap py-5 items-center">
+            <input class="flex-1 bg-gray-200 p-1 border-gray-400 text-gray-400 text-xs h-8" readonly data-br-share-link />
+            <button data-br-copy-button class="flex-1 bg-blue-500 text-white py-1 px-3 md:rounded-r mr-4 ">
+                <svg class="inline-block" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="13"><path fill="currentColor" d="M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z" class=""></path></svg>
+                copy to clipboard
+            </button>
+        </div>
+        <div data-br-copy-button-message class="text-xs p-1"></div>
+        <div class="pt-5 mt-10 border-t border-gray-200">
+            <p class="py-4 text-gray-500">Here are some other user agents for testing this demo. Select an option from the drop down to reload the page - uses share links.</p>
+                <select class="border border-gray-300 bg-gray-200 p-1" name="ua" onchange="document.location = '?ua='+this.value;" >
+                    <option value="">Select</option>
+                    <option value="Mozilla%2F5.0%20(Macintosh%3B%20Intel%20Mac%20OS%20X%2010.15%3B%20rv%3A87.0)%20Gecko%2F20100101%20Firefox%2F87.0">Firefox - OSX</option>
+                    <option value="User-Agent%3A%20Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F79.0.3945.74%20Safari%2F537.36%20Edg%2F79.0.309.43">Edge - Windows 10</option>
+                    <option value="Mozilla%2F5.0%20(iPhone%3B%20CPU%20iPhone%20OS%205_0_1%20like%20Mac%20OS%20X)%20AppleWebKit%2F534.46%20(KHTML%2C%20like%20Gecko)%20Version%2F5.1%20Mobile%2F9A405%20Safari%2F7534.48.3">Safari - IOS</option>
+                </select>
+            
+        </div>
+    </div>
+    <script src="browser.radar.min.js"></script>
+</body>
+</html>

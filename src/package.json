@@ -1,0 +1,25 @@
+{
+    "name": "browser-radar",
+    "version": "1.0.0",
+    "author": "Brian Matthews <brian@slapthink.net> (https://slapthink.net)",
+    "description": "Useful page to display browser/system info - great for tech support requests.",
+    "main": "src/browser.radar.js",
+    "scripts": {
+        "start": "npm run watch",
+        "watch": "onchange 'index.html' 'js/*.js' -- npm run build",
+        "build": "mkdir -p ../dist && npm run build:js && npm run build:css && npm run build:demo",
+        "build:js": "terser node_modules/ua-parser-js/dist/ua-parser.min.js js/*.js --output ../dist/browser.radar.min.js",
+        "build:demo": "mkdir -p ../demo && cp index.html ../demo/ && cp ../dist/browser.radar.min.js ../demo/",
+        "build:css": "NODE_ENV=production npx tailwind build tailwind.css -o ../demo/style.css",
+        "watch:css": "onchange 'index.html' -- npm run build:css",
+        "watch:js": "onchange 'js/*.js'  -- npm run build:js",
+        "watch:html": "onchange 'index.html'  -- npm run build:demo"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "onchange": "^7.1.0",
+        "tailwindcss": "^2.1.1",
+        "terser": "^5.6.1",
+        "ua-parser-js": "^0.7.28"
+    }
+}
