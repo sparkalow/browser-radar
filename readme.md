@@ -5,6 +5,9 @@ for Internet Explorer.
 
 Uses the fabulous [UAParser.js](https://github.com/faisalman/ua-parser-js) library for detection and some basic javascript for reading url and rendering resulting data.
 
+**Demo** - https://sparkalow.github.io/browser-radar/
+
+
 # Usage
 
 Intended to be used in client browsers, never tested in node.js.
@@ -13,7 +16,6 @@ Intended to be used in client browsers, never tested in node.js.
 - Setup html with `data-br-key` to mark them as containers for data output
 - Call `browserRadar.init();` after the dom is ready
 
-See the demo
 
 ### Basic Template
 ```html
