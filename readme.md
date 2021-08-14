@@ -10,7 +10,7 @@ Uses the fabulous [UAParser.js](https://github.com/faisalman/ua-parser-js) libra
 
 # Usage
 
-Intended to be used in client browsers, never tested in node.js.
+Intended to be used in client browsers (with a dom), not intended/tested in node environments.
 
 - Include the js
 - Setup html with `data-br-key` to mark them as containers for data output
@@ -26,7 +26,7 @@ Intended to be used in client browsers, never tested in node.js.
     </script>
     <strong>Browser</strong><span data-br-key="browser.name"></span>
     <p>Copy the link below to share with your support team.</p>
-    <input  data-br-share-link />
+    <input data-br-share-link />
     <button data-br-copy-button>Copy to clipboard</button>
     <div data-br-copy-button-message></div>
 ```
