@@ -13,7 +13,7 @@ Uses the fabulous [UAParser.js](https://github.com/faisalman/ua-parser-js) libra
 Intended to be used in client browsers (with a dom), not intended/tested in node environments.
 
 - Include the js
-- Setup html with `data-br-key` to mark them as containers for data output
+- Setup html elements with `data-br-key` to mark them as containers for data output
 - Call `browserRadar.init();` after the dom is ready
 
 
@@ -62,7 +62,7 @@ Here are some popular ones.
 ### Share urls
 Share urls can be automatically output for sharing with support teams. Share urls are simply links to the
 current page with url encoded user agent strings. When viewing the page with a passed user agent string, the passed
-string will be used to reterive the data.
+string will be used to generate the data.
 
 
 Use `data-br-copy-button` attribute on a dom element (probably a button) to cause the share url to be copied to 
